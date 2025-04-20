@@ -29,3 +29,4 @@ Serial.print((int)humidity); Serial.println(" H");
 // DHT11 sampling rate is 1HZ.
 delay(1500);
 }
+3 wires green-last & gnd; purple-middle & A1; white-last & 5
