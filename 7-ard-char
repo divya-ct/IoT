@@ -1,0 +1,45 @@
+const int greenLED = 7;
+const int yellowLED = 8;
+cont int redLED = 9;
+void setup()
+{
+pinMode(greenLED,OUTOUT);
+pinMode(yellowLed,OUTPUT);
+pinMode(redLED,OUTPUT);
+Serial.begin(9600);
+}
+void loop()
+{
+ if(Serial.available())
+ {
+  char command = Serial.read();
+ if(command == 'b')
+ {
+  for(int i=0;i<5;i++)
+  {
+   digitalWrite(greenLED,HIGH);
+   delay(500);
+   digitalWrite(greenLed,LOW);
+   delay(500);
+  }
+  else if(command == 'g')
+  {
+   digitalWrite(greenLED,HIGH);
+   digitalWrite(yellowLED,LOW);
+   digitalWrite(redLED,LOW);
+  }
+  else if(command == 'y')
+  {
+   digitalWrite(greenLED,LOW);
+   digitalWrite(yellowLED,HIGH);
+   digitalWrite(redLED,LOW);
+  }
+  else if(command == 'r')
+  {
+   digitalWrite(greenLED,LOW);
+   digitalWrite(yellowLED,LOW);
+   digitalWrite(redLED,HIGH);
+   }
+ }
+ }
+}
