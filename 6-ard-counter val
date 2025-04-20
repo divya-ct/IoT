@@ -1,0 +1,40 @@
+int counter=0;
+void setup()
+{
+Serial.begin(9600);
+pinMode(4,OUTPUT);
+pinMode(5,OUTPUT);
+pinMode(3,OUTPUT);
+}
+void loop()
+{
+ if (counter == 300)
+{
+   counter=0;
+}
+if (counter < 300)
+{
+  Serial.println(counter);
+}
+counter = counter+1;
+delay(10);
+if (counter > 0 && counter < 100)
+{
+  digitalWrite(4,HIGH);    //G
+  digitalWrite(5,LOW);
+  digitalWrite(3,LOW);
+}
+if (counter > 100 && counter < 200)
+{
+  digitalWrite(4,LOW);
+  digitalWrite(5,HIGH);     //Y
+  digitalWrite(3,LOW);
+}
+if (counter > 200 && counter < 300)
+{
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  digitalWrite(3,HIGH);      //R
+}
+}
+//3 LEDS cathode on gnd and anode on other side . Both on BB. # wires , one side on adjacent of each LED and other side of wire on digital pins 4G,5Y,3R, according to color. 4th wire on GND of BB & GND of arduino and last power supply.
