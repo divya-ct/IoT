@@ -1,0 +1,20 @@
+int n;
+void setup()
+{
+Serial.begin(9600);
+Serial.print(“\nEnter a no :”);
+}
+void loop()
+{
+if(Serial.available() > 0)
+{
+String input = Serial.readStringUntil(“\n”);
+N = int.toInt();
+Serial.print(“The square of”);
+Serial.print(n);
+Serial.print(“is”);
+Serial.print(n*n);
+delay(500);
+Serial.print(“\nEnter a no: “);
+}
+}
